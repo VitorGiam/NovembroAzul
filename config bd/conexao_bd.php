@@ -7,9 +7,9 @@ class conexao_bd
     public function __construct()
     {
         $servidor = "127.0.0.1";
-        $usuario = "admin";
+        $usuario = "root";
         $senha = "";
-        $banco = "bd_novembro";
+        $banco = "hackathon";
         $this->conn = new mysqli($servidor, $usuario, $senha, $banco);
     }
 
@@ -17,4 +17,5 @@ class conexao_bd
     {
         return $this->conn->query($q);
     }
+
 }
