@@ -13,7 +13,7 @@ $altura = $_POST['txt_altura'];
 $sexo = $_POST['txt_sexo'];
 
 $sql = "INSERT INTO `pessoa` (`idCodigoPessoa`, `nome`, `email`, `senha`, `sexo`, `peso`, `altura`, `idade`) 
-        VALUES (NULL, '$nome', '$email', '$senha', '$idade', '$peso', '$altura', '$sexo')";
+                                VALUES (NULL, '$nome', '$email', '$senha','$sexo','$peso','$altura','idade' )";
 
 $result = $conn->query($sql);
 
