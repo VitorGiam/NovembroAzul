@@ -16,13 +16,15 @@ session_start();
 </head>
 <body>
 <div class = "container">
+    <br>
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3 class="panel-title">Lista de pedidos</h3>
+            <h3 class="panel-title">Historico do sue perfil</h3>
         </div>
         <table class="table table-bordered table-hover table-striped">
             <thead>
-            <th>Valor</th>
+            <th>Data</th>
+            <th>Progresso</th>
 
             </thead>
             <tbody>
@@ -36,6 +38,7 @@ session_start();
                     foreach ($fetch as $value) {
                         $valor = $value;
                         echo "<tr>";
+                        echo "<td>{$value[0]}</td>";
                         echo "<td>{$value[0]}</td>";
                         echo "</tr>";
                     }
