@@ -2,8 +2,8 @@
 session_start();
 include("config bd/conexao_bd.php");
 
-$email = @$_POST['txt_email'];
-$senha = @$_POST['txt_senha'];
+$email = $_POST['txt_email'];
+$senha = $_POST['txt_senha'];
 
 // header("Location: paginas/perfil.php");
 
@@ -14,17 +14,16 @@ function consulta_usuario_bd($senha, $email)
     if (!empty($result1)) {
         if ($fetch = $result1->fetch_assoc()) {
             foreach ($fetch as $field => $value) {
-                // echo '<pre>';print_r($result->fetch_all());exit;
-                header("Location: paginas/perfil.php");
+                // header("Location: paginas/perfil.php");
                 if ($field == 'senha') {
                     if ($value != $senha) {
-                        header('Location: index.html');
+                        header('Location: index.php?e=1');
                         exit;
                     }
                 }
                 if ($field == 'email') {
                     if ($value != $email) {
-                        header("Location: index.html");
+                        header("Location: index.php?e=2");
                         exit;
                     } else {
                         $_SESSION['email'] = $value;
@@ -41,12 +40,15 @@ function consulta_usuario_bd($senha, $email)
                     $_SESSION['sexo'] = $value;
                 }
             } //foreach
-            header("Location: paginas/perfil.php");exit;
-        } // fetch
-    } else {
-        header("Location: index.html");
-        exit;
+            header("Location: paginas/perfil.php");
+            exit;
+        }else{
+          header("Location: index.php?e=3");
+          exit;
+        }
     }
+    header("Location: index.php?e=4");
+    exit;
 }
 
 consulta_usuario_bd($senha, $email);
