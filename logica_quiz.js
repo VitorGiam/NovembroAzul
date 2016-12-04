@@ -1,11 +1,12 @@
-var tipoUm, tipoDois;
+var tipoDiabetes;
 var idade, hereditariedade, consumoAlcoolico,
-alimentacao, atividadeFisica,
-temHistorico, stress, imc, mulher;
+alimentacao, atividadeFisica, publicoFeminino,
+temHistorico, stress, imc, mulher, gravida, id;
 temHistorico = false;
 $().ready(function() {
-
-    mulher = Boolean($("input[name=mulher]").val());
+    id = parseInt($("input[name=id]").val());
+    //mulher = Boolean($("input[name=mulher]").val());
+    mulher= false;
     imc = parseInt($("input[name=imc]").val());
     idade = parseInt($("input[name=idade]").val());
 
@@ -19,7 +20,8 @@ $().ready(function() {
         respStress();
 
         if(atividadeFisica == NaN || consumoAlcoolico == NaN ||
-        hereditariedade == NaN || alimentacao == NaN || stress == NaN ){
+        hereditariedade == NaN || alimentacao == NaN || stress == NaN)
+        {
           return false;
         }
 
@@ -33,24 +35,55 @@ function verificaTipoDiabetes(){
   total = alimentacao + stress;
 
   total += adicionalIMC();
-
-  if(mulher){
-
-    // gestacional
-  }
-  else if(idade > 30 && idade <= 40){
+    tipoDiabetes = "nenhum";
+  // if(mulher && gravida){
+  //   tipoDiabetes = total > 100 ? "gestacional": "nenhum";
+  //
+  // }
+  // else
+    if(idade > 30 && idade <= 40){
     total += 20;
-    // normal;
-    // preDiabetes;
+
+    if (total > 0 && total <= 50) {
+      tipoDiabetes = "nenhum";
+
+    }else if (total > 50 && total < 150) {
+      tipoDiabetes = "preDiabetes";
+
+    }else{
+      tipoDiabetes = "tipoI";
+    }
+
   }
   else if(idade > 40){
     total += 50;
-    // tipoII
 
-  } else {
-
+    tipoDiabetes = total > 100 ? "tipoII": "nenhum";
 
   }
+
+  var obj = new Object();
+   obj.tipoDiabetes = tipoDiabetes;
+   obj.pontuacao  = total;
+   obj.id = id;
+  var data= JSON.stringify(obj);
+
+  console.log(data);
+  $.ajax({
+  url: 'armazenaPontos.php',
+  type: "POST",
+  dataType:'json',
+  data: JSON.stringify(obj),
+  success: function(data) {
+      window.location.href="paginas/perfil.php";
+      $("form").hide();
+  },
+  error: function(XMLHttpRequest, textStatus, errorThrown){
+      console.log(errorThrown);
+      alert("Erro!");
+  }
+});
+
 }
 
 function adicionalIMC(){
@@ -90,7 +123,7 @@ function respHereditariedade(){
   r3 = $('input[name=op6r3]').is('checked') ? parseInt($('input[name=op6r1]:checked').val()) : 0;
   r4 = $('input[name=op6r4]').is('checked') ? parseInt($('input[name=op6r1]:checked').val()) : 0;
   hereditariedade = r1 + r2 + r3 + r4;
-  if(hereditariedade > 0) temHistorico = true;
+  if(hereditariedade > 20) temHistorico = true;
   console.log(hereditariedade);
 }
 
@@ -106,9 +139,31 @@ function respAlimentacao(){
 function respStress(){
   stress = 0;
   var r9, r10, r11;
-  stress += parseInt($('input[name=op9]:checked').val());
-  stress += parseInt($('input[name=op10]:checked').val());
-  stress += parseInt($('input[name=op11]:checked').val());
+  r9 = parseInt($('input[name=op9]:checked').val());
+  r10 = parseInt($('input[name=op10]:checked').val());
+  r11 = parseInt($('input[name=op11]:checked').val());
   stress = r9 + r10 + r11;
   console.log(stress);
 }
+
+// function respPublicoFeminino() {
+//
+//   if(mulher){
+//     var r12, r13, r14;
+//     r12 = parseInt($('input[name=op12]:checked').val());
+//     r13 = parseInt($('input[name=op13]:checked').val());
+//     r14 = parseInt($('input[name=op14]:checked').val());
+//
+//     if(r13 > 0) gravida = true;
+//
+//     publicoFeminino = r12 + r13 + r14;
+//
+//     if (publicoFeminino == NaN) {
+//       return false;
+//     }
+//   }else{
+//     publicoFeminino = 0;
+//   }
+//   console.log(publicoFeminino);
+//   return true;
+// }

@@ -17,5 +17,5 @@ $sql = "INSERT INTO `pessoa` (`idCodigoPessoa`, `nome`, `email`, `senha`, `sexo`
 
 $result = $conn->query($sql);
 
-
+header("Location: ../quiz.php");
 ?>

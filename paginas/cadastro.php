@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Blank Template for Bootstrap</title>
-
+    <link rel="icon" href="imagens/favicon.ico">
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
 
     <link href="style.css" rel="stylesheet">
