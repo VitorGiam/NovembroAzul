@@ -7,9 +7,4 @@ unset($_SESSION['id'],
     $_SESSION['senha'],
     $_SESSION['nivel_acesso']);
 session_destroy();
-header("Location: index.html");exit;
-
-
-
-
-
+header("Location: index.php");exit;

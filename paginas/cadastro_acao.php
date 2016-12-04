@@ -12,10 +12,10 @@ $peso = $_POST['txt_peso'];
 $altura = $_POST['txt_altura'];
 $sexo = $_POST['txt_sexo'];
 
-$sql = "INSERT INTO `pessoa` (`idCodigoPessoa`, `nome`, `email`, `senha`, `sexo`, `peso`, `altura`, `idade`) 
-                                VALUES (NULL, '$nome', '$email', '$senha','$sexo','$peso','$altura','idade' )";
+$sql = "INSERT INTO `pessoa` (`nome`, `email`, `senha`, `sexo`, `peso`, `altura`, `idade`)
+                                VALUES ( '$nome', '$email', '$senha','$sexo','$peso','$altura','$idade' )";
 
 $result = $conn->query($sql);
 
-header("Location: ../quiz.php");
+header("Location: ../index.php");
 ?>

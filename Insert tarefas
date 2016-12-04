@@ -1,0 +1,8 @@
+INSERT INTO `Tarefas`(`idCodigoeExercicio`, `desafio`, `quantidade`, `tipoRisco`) VALUES ('Corridas matinais','40 minutos diários','Pré diabetes');
+
+INSERT INTO `Tarefas`(`idCodigoeExercicio`, `desafio`, `quantidade`, `tipoRisco`) VALUES ('Abdominal cruzado','três series de 20','Pré diabetes');
+
+INSERT INTO `Tarefas`(`idCodigoeExercicio`, `desafio`, `quantidade`, `tipoRisco`) VALUES ('Abdominal invertido','três series de 20','Pré diabetes');
+
+INSERT INTO `Tarefas`(`idCodigoeExercicio`, `desafio`, `quantidade`, `tipoRisco`) VALUES ('Andar de bicicleta','três series de 20','Pré diabetes');
+

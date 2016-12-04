@@ -74,6 +74,7 @@ function verificaTipoDiabetes(){
         data: JSON.stringify(obj),
         success: function(data) {
             $("form").hide();
+            window.location.href = "paginas/perfil.php";
         },
         error: function(XMLHttpRequest, textStatus, errorThrown){
             console.log(errorThrown);

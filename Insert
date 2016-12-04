@@ -1,0 +1,10 @@
+INSERT INTO `Pessoa`(`nome`, `email`, `senha`, `sexo`, `peso`, `altura`, `idade`) VALUES ('Wagner','wagner@teste.com','1234','feminino',60.2,1.92,27);
+INSERT INTO `Pessoa`(`nome`, `email`, `senha`, `sexo`, `peso`, `altura`, `idade`) VALUES ('Yago','Yago@teste.com','1234','masculino',70.3,1.54,27);
+INSERT INTO `Pessoa`(`nome`, `email`, `senha`, `sexo`, `peso`, `altura`, `idade`) VALUES ('Vitor','Vitor@teste.com','1234','masculino',100.3,2.20,27);
+INSERT INTO `Pessoa`(`nome`, `email`, `senha`, `sexo`, `peso`, `altura`, `idade`) VALUES ('Wagner','wagner@teste.com','1234','masculino',200.32,0.82,27);
+
+
+INSERT INTO `Historico_Perfil`(`pontuacao`, `idCodigoPessoa`) VALUES (200,1);
+INSERT INTO `Historico_Perfil`(`pontuacao`, `idCodigoPessoa`) VALUES (400,2);
+INSERT INTO `Historico_Perfil`(`pontuacao`, `idCodigoPessoa`) VALUES (500,3);
+INSERT INTO `Historico_Perfil`(`pontuacao`, `idCodigoPessoa`) VALUES (600,4);

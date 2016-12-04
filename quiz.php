@@ -3,17 +3,17 @@ session_start();
 include("config bd/conexao_bd.php");
 
 $conn = new conexao_bd();
-$result1 = $conn->query("SELECT * FROM pessoa WHERE idCodigoPessoa = 1"); //". $_SESSION['id'] );
+$result1 = $conn->query("SELECT * FROM pessoa WHERE idCodigoPessoa = ".$_SESSION['id']);
 $fetch = $result1->fetch_assoc();
-// var_dump($fetch);
+
 $sexo = trim($fetch['sexo']);
 $peso = $fetch['peso'];
 $altura = $fetch['altura'];
 $idade = $fetch['idade'];
-
+// print_r($sexo);
 
 $imc = $peso / ($altura * $altura);
-// var_dump($_SESSION);
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -38,7 +38,7 @@ $imc = $peso / ($altura * $altura);
 
     <form action="#">
 
-        <label class="form-check-label"><h2>Questionario</h2></label>
+        <label class="form-check-label"><h2>Questionário</h2></label>
 
         <ul>
             <label class="form-check-label"><h4>Você pratica esportes?</h4></label>
@@ -194,6 +194,54 @@ $imc = $peso / ($altura * $altura);
             </li>
         </ul>
 
+        <?php
+        if($sexo == "feminino" || $sexo == "f"){
+       ?>
+      <ul>
+        <label class="form-check-label"><h4>Já teve filhos com mais de 4 kg?</h4></label>
+        <li class="radio">
+          <label><input type="radio" name="op12" value="20" required>Sim</label>
+        </li>
+        <li class="radio">
+          <label><input type="radio" name="op12" value="0">Não</label>
+        </li>
+      </ul>
+
+        <ul>
+          <label class="form-check-label"><h4>Está em período gestacional? Quantas semanas?</h4></label>
+          <li class="radio">
+            <label><input type="radio" name="op13" value="0">Não</label>
+          </li>
+          <li class="radio">
+            <label><input type="radio" name="op13" value="40" required>até 4 Semanas</label>
+          </li>
+          <li class="radio">
+            <label><input type="radio" name="op13" value="40" required>entre 4 e 8 Semanas</label>
+          </li>
+          <li class="radio">
+            <label><input type="radio" name="op13" value="40" required>entre 8 e 16 Semanas</label>
+          </li>
+          <li class="radio">
+            <label><input type="radio" name="op13" value="0" required>Mais de 16 semanas</label>
+          </li>
+        </ul>
+
+        <ul>
+          <label class="form-check-label"> <h4>Já teve histórico na família de Diabetes gestacional?</h4></label>
+          <li class="radio">
+            <label><input type="radio" name="op14" value="50" required>Sim</label>
+          </li>
+          <li class="radio">
+            <label><input type="radio" name="op14" value="0">Não</label>
+          </li>
+        </ul>
+
+        <?php }  ?>
+        <input type="hidden" name="mulher" value="<?php if($sexo == "feminino"){
+            echo "true";
+        }else{
+            echo "false";
+        }?>">
 </div>
 
 <input type="hidden" name="imc" value="<?php echo $imc; ?>">

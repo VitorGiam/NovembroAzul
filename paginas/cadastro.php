@@ -19,7 +19,7 @@
 <br>
 <header>
     <div class="col-md-12 text-center">
-        <img src="../imagens/bigode.png" width="200" />
+        <img src="../imagens/banner.png" width="200" />
     </div>
 </header>
     <body class="body-background">
@@ -49,10 +49,10 @@
                 <input type="number" step="0.1" name="txt_altura" id="inputAltura" min="1" class="form-control" placeholder="Altura" required autofocus>
                 <br>
                 <label class="radio-inline">
-                    <input type="radio" name="txt_sexo" id="Homem" value="h" checked>Homem
+                    <input type="radio" name="txt_sexo" id="Homem" value="masculino" checked>Homem
                 </label>
                 <label class="radio-inline">
-                    <input type="radio" name="txt_sexo" id="mulher" value="m">Mulher
+                    <input type="radio" name="txt_sexo" id="mulher" value="feminino">Mulher
                 </label>
                 <br>
                 <br>
