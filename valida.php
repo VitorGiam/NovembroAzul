@@ -49,7 +49,6 @@ function consulta_usuario_bd($senha, $email)
     }
     header("Location: index.php?e=4");
     exit;
-    }
 }
 
 consulta_usuario_bd($senha, $email);
