@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // session_start();
 include("config bd/conexao_bd.php");
 
@@ -28,15 +28,16 @@ $imc = $peso / ($altura * $altura);
   <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
   <link href="css/signin.css" rel="stylesheet">
   <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
-  <script type="text/javascript" src="logica_quiz.js"></script>
+  <script type="text/javascript" src="logica_quiz.js"></script>  
+  <link rel="stylesheet" type="text/css" href="designer.css"/>
 </head>
 <body>
   <div class="container">
 
   <form action="#">
-
+	 <label class="form-check-label"><h2>Questionario</h2></label>
       <ul>
-        <label class="form-check-label">Você pratica esportes?</label>
+        <label class="form-check-label"><h4>Você pratica esportes?</h4></label>
         <li class="radio">
           <label><input type="radio" name="op1" value="0" required>Sim</label>
         </li>
@@ -46,7 +47,7 @@ $imc = $peso / ($altura * $altura);
       </ul>
 
       <ul>
-        <label>Quantas vezes na semana?</label>
+        <label><h4>Quantas vezes na semana?</h4></label>
         <li class="radio">
           <label><input type="radio" name="op2" value="0" required>Mais de 3 vezes</label>
         </li>
@@ -62,7 +63,7 @@ $imc = $peso / ($altura * $altura);
       </ul>
 
       <ul>
-        <label>Você costuma ficar quantas horas diarias em frente ao computador ou televisão?</label>
+        <label><h4>Você costuma ficar quantas horas diarias em frente ao computador ou televisão?</h4></label>
         <li class="radio">
         <label><input type="radio" name="op3" value="40" required>6 horas</label>
         </li>
@@ -78,7 +79,7 @@ $imc = $peso / ($altura * $altura);
       </ul>
 
       <ul>
-        <label>Você consome bebida alcoolica?</label>
+        <label><h4>Você consome bebida alcoolica?</h4></label>
         <div class="radio">
         <label><input type="radio" name="op4" value="20" required>Sim</label>
         </div>
@@ -88,7 +89,7 @@ $imc = $peso / ($altura * $altura);
       </ul>
 
       <ul>
-        <label>Socialmente ou diariamente?</label>
+        <label><h4>Socialmente ou diariamente?</h4></label>
         <div class="radio">
         <label><input type="radio" name="op5" value="5">Socialmente</label>
         </div>
@@ -98,7 +99,7 @@ $imc = $peso / ($altura * $altura);
       </ul>
 
       <ul>
-        <label>Tem algum histórico de diabetes na família?</label>
+        <label><h4>Tem algum histórico de diabetes na família?</h4></label>
         <li class="checkbox">
         <label><input type="checkbox" name="op6r1" value="50" required>Pais</label>
         </li>
@@ -114,7 +115,7 @@ $imc = $peso / ($altura * $altura);
       </ul>
 
       <ul>
-        <label>Você prefere uma fruta ou chocolate de manhâ?</label>
+        <label><h4>Você prefere uma fruta ou chocolate de manhâ?</h4></label>
         <li class="radio">
         <label><input type="radio" name="op7" value="10" required>Fruta</label>
         </li>
@@ -124,7 +125,7 @@ $imc = $peso / ($altura * $altura);
       </ul>
 
       <ul>
-        <label>Quando você está com sede você prefere agua ou refrigerante?</label>
+        <label><h4>Quando você está com sede você prefere agua ou refrigerante?</h4></label>
         <li class="radio">
         <label><input type="radio" name="op8" value="50" required>Refrigerante</label>
         </li>
@@ -134,7 +135,7 @@ $imc = $peso / ($altura * $altura);
       </ul>
 
       <ul>
-        <label>Quando você sai com a namorada (o) qual a primeira escolha que vem à mente quando vocês vão comer?</label>
+        <label><h4>Quando você sai com a namorada (o) qual a primeira escolha que vem à mente quando vocês vão comer?</h4></label>
         <li class="radio">
         <label><input type="radio" name="op9" value="50" required>Mc Donalds/Burguer King</label>
         </li>
@@ -150,7 +151,7 @@ $imc = $peso / ($altura * $altura);
       </ul>
 
       <ul>
-        <label>No dia da sua folga o que você prefere fazer?</label>
+        <label><h4>No dia da sua folga o que você prefere fazer?</h4></label>
         <li class="radio">
         <label><input type="radio" name="op10" value="0" required>Acordar de manhã e fazer uma caminhada</label>
         </li>
@@ -169,7 +170,7 @@ $imc = $peso / ($altura * $altura);
       </ul>
 
       <ul>
-        <label>Depois de um dia estressante no trabalho o que você faz quando chega em casa?</label>
+        <label><h4>Depois de um dia estressante no trabalho o que você faz quando chega em casa?</h4></label>
         <li class="radio">
         <label><input type="radio" name="op11" value="40" required>Ataca a geladeira</label>
         </li>

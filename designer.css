@@ -1,0 +1,27 @@
+h4{
+	color: Red;
+	font-weight: bold;
+	
+}
+h2{
+	
+	font-style: italic;
+	text-decoration: underline;
+	font-weight: bold;
+	margin: 0 auto;
+	
+}
+ul{
+	border-width: medium;
+    border-style: solid;
+    border-color: #000000;
+}
+
+body{
+	background-color: #ffffff;
+	width:100px;
+	height:100px;
+	position:absolute;
+	top:00	%;
+	left:10%;
+}
