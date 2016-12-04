@@ -43,38 +43,14 @@ if (!empty($result)) {
 
 </head>
 <body>
+<img src="azul.jpg" width="320" height="205"/>
 <div class="container">
     <br>
     <div class="panel panel-default">
         <div class="panel-heading">
             <h3 class="panel-title">Histórico do seu perfil</h3>
         </div>
-        <table class="table table-bordered table-hover table-striped">
-            <thead>
-            <th>Data</th>
-            <th>Progresso</th>
-
-            </thead>
-            <tbody>
-            <?php
-            include_once("../config bd/conexao_bd.php");
-            $conn = new conexao_bd();
-            $result = $conn->query("SELECT * FROM historico_perfil WHERE idcodigopessoa = "+ $_SESSION['id']);
-            //echo '<pre>';print_r($result->fetch_all());
-            if (!empty($result)) {
-                if ($fetch = $result->fetch_all()) {
-                    foreach ($fetch as $value) {
-                        $valor = $value;
-                        echo "<tr>";
-                        echo "<td>{$value[0]}</td>";
-                        echo "<td>{$value[0]}</td>";
-                        echo "</tr>";
-                    }
-                }
-            }echo "<td>nada</td>";
-            ?>
-            </tbody>
-        </table>
+       
     </div>
     <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:$valor%">
         $valor%
@@ -99,10 +75,7 @@ if (!empty($result)) {
                   type: 'column'
               },
               title: {
-                  text: 'Seu histórico'
-              },
-              subtitle: {
-                  text: 'Subtitulo'
+                  text: ''
               },
               xAxis: {
                   type: 'category',
