@@ -10,7 +10,7 @@ $sexo = trim($fetch['sexo']);
 $peso = $fetch['peso'];
 $altura = $fetch['altura'];
 $idade = $fetch['idade'];
-// print_r($sexo);
+print_r($sexo);
 
 $imc = $peso / ($altura * $altura);
 
@@ -95,7 +95,7 @@ $imc = $peso / ($altura * $altura);
         <ul>
             <label><h4>Socialmente ou diariamente?</h4></label>
             <div class="radio">
-                <label><input type="radio" name="op5" value="5">Socialmente</label>
+                <label><input type="radio" name="op5" value="5" required>Socialmente</label>
             </div>
             <div class="radio">
                 <label><input type="radio" name="op5" value="20">Diariamente</label>
@@ -237,17 +237,19 @@ $imc = $peso / ($altura * $altura);
         </ul>
 
         <?php }  ?>
-        <input type="hidden" name="mulher" value="<?php if($sexo == "feminino"){
-            echo "true";
-        }else{
-            echo "false";
-        }?>">
-</div>
 
-<input type="hidden" name="imc" value="<?php echo $imc; ?>">
-<input type="hidden" name="id" value="<?php echo $_SESSION['id']; ?>">
-<input type="hidden" name="idade" value="<?php echo $idade; ?>">
-<button class="btn btn-lg btn-success btn-block" type="submit">Acessar</button>
+</div>
+<input type="hidden" name="mulher" value=
+<?php if($sexo == "feminino" || $sexo == "f"){
+      echo "\"true\"";
+  }else{
+      echo "\"false\"";
+  }?> >
+  
+    <input type="hidden" name="imc" value="<?php echo $imc; ?>">
+    <input type="hidden" name="id" value="<?php echo $_SESSION['id']; ?>">
+    <input type="hidden" name="idade" value="<?php echo $idade; ?>">
+    <button class="btn btn-lg btn-success btn-block" type="submit">Acessar</button>
 
   </form>
   </div>

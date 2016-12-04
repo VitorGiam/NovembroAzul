@@ -30,7 +30,7 @@ $nome = $_SESSION['nome'];
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>Carousel Template for Bootstrap</title>
+        <title>Pagina de perfil</title>
         <!-- Bootstrap core CSS -->
         <link rel="icon" href="../imagens/favicon.ico">
         <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -51,17 +51,14 @@ $nome = $_SESSION['nome'];
         <script src="https://www.highcharts.com/samples/static/highslide.config.js" charset="utf-8"></script>
         <link rel="stylesheet" type="text/css" href="https://www.highcharts.com/samples/static/highslide.css" />
     </head>
-    <!-- NAVBAR
-================================================== -->
+
     <body>
         <div class="navbar-wrapper">
             <div class="container">
-</div>
+            </div>
         </div>
-        <!-- Carousel
-    ================================================== -->
+
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
-            <!-- Indicators -->
             <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                 <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -111,9 +108,7 @@ $nome = $_SESSION['nome'];
         </div>
         <div class="container marketing">
             <h1>Bem vindo!</h1>
-            <!-- Three columns of text below the carousel -->
-            <div class="col-lg-4">
-</div>
+            <div class="col-lg-4"> </div>
             <div class="row">
                 <div class="col-lg-4">
                     <img class="img-circle" src="../imagens/Dapino-People-Brown-man.ico" alt="Generic placeholder image" width="140" height="140">
@@ -122,13 +117,7 @@ $nome = $_SESSION['nome'];
                     <p></p>
                     <a href="../sair.php" class="btn btn-default">Sair</a>
                 </div>
-                <!-- /.col-lg-4 -->
-                <!-- /.col-lg-4 -->
-                <!-- /.col-lg-4 -->
             </div>
-            <!-- /.row -->
-            <!-- START THE FEATURETTES -->
-
 
             <hr class="featurette-divider">
             <div class="row featurette">

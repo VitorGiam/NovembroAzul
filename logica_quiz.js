@@ -35,6 +35,8 @@ function verificaTipoDiabetes(){
 
     total += adicionalIMC();
 
+    tipoDiabetes = "nenhum";
+    
     if(mulher && gravida){
         tipoDiabetes = total > 100 ? "gestacional": "nenhum";
 
