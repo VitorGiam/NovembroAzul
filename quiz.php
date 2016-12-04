@@ -1,6 +1,5 @@
-﻿﻿<?php
+﻿<?php
 session_start();
-
 include("config bd/conexao_bd.php");
 
 $conn = new conexao_bd();
@@ -19,6 +18,7 @@ $imc = $peso / ($altura * $altura);
 <!DOCTYPE html>
 <html>
 <head>
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -201,7 +201,7 @@ $imc = $peso / ($altura * $altura);
 <input type="hidden" name="idade" value="<?php echo $idade; ?>">
 <button class="btn btn-lg btn-success btn-block" type="submit">Acessar</button>
 
-    </form>
-    </div>
+  </form>
+  </div>
 </body>
 </html>
